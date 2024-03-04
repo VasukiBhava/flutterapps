@@ -117,6 +117,7 @@ class CustomTextFormField extends StatelessWidget {
               horizontal: 12.h,
               vertical: 13.v,
             ),
+
         fillColor: fillColor ?? appTheme.gray50,
         filled: filled,
         border: borderDecoration ??
@@ -126,14 +127,20 @@ class CustomTextFormField extends StatelessWidget {
                 borderSide: BorderSide.none,
               ),
               shadow: const BoxShadow(
-                color: Colors.blue,
-                blurRadius: 35,
+                color: Colors.green,
+                blurRadius: 35
               ),
             ),
         enabledBorder: borderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(22.h),
-              borderSide: BorderSide.none,
+            DecoratedInputBorder(
+              child:  OutlineInputBorder(
+                borderRadius: BorderRadius.circular(22.h),
+                borderSide: BorderSide.none,
+              ),
+              shadow:  BoxShadow(
+                  color: Colors.grey.shade300,
+                  blurRadius: 15
+              ),
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
@@ -178,10 +185,10 @@ class DecoratedInputBorder extends InputBorder {
 
   @override
   ShapeBorder scale(double t) {
-    final scalledChild = child.scale(t);
+    final scaledChild = child.scale(t);
 
     return DecoratedInputBorder(
-      child: scalledChild is InputBorder ? scalledChild : child,
+      child: scaledChild is InputBorder ? scaledChild : child,
       shadow: BoxShadow.lerp(null, shadow, t)!,
     );
   }

@@ -399,10 +399,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 16.v,
                       width: 305.h,
                       decoration: BoxDecoration(
-                        color: theme.colorScheme.primary,
                         borderRadius: BorderRadius.circular(
                           152.h,
                         ),
+                        boxShadow:[  BoxShadow(
+                            color: theme.colorScheme.primary.withOpacity(0.5),
+                            blurRadius: 15
+                        ),]
                       ),
                     ),
                   ),

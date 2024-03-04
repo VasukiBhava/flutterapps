@@ -9,7 +9,7 @@
 
 
     <application
-        android:label="{applicationName}"
+        android:label="Dental App"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
