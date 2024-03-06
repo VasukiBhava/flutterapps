@@ -8,7 +8,6 @@
 - [How to format your code?](#how-you-can-do-code-formatting)
 - [How you can improve code readability?](#how-you-can-improve-the-readability-of-code)
 - [Libraries and tools used](#libraries-and-tools-used)
-- [Support](#support)
 
 ### System requirements
 
