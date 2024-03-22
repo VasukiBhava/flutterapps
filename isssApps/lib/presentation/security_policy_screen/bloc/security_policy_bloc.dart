@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import '/core/app_export.dart';
-import 'package:vasuki_s_application1/presentation/security_policy_screen/models/security_policy_model.dart';
+import 'package:isssApps/presentation/security_policy_screen/models/security_policy_model.dart';
 part 'security_policy_event.dart';
 part 'security_policy_state.dart';
 

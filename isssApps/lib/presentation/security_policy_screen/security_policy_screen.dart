@@ -1,11 +1,11 @@
 import 'bloc/security_policy_bloc.dart';
 import 'models/security_policy_model.dart';
 import 'package:flutter/material.dart';
-import 'package:vasuki_s_application1/core/app_export.dart';
-import 'package:vasuki_s_application1/core/utils/validation_functions.dart';
-import 'package:vasuki_s_application1/widgets/app_bar/custom_app_bar.dart';
-import 'package:vasuki_s_application1/widgets/custom_button.dart';
-import 'package:vasuki_s_application1/widgets/custom_text_form_field.dart';
+import 'package:isssApps/core/app_export.dart';
+import 'package:isssApps/core/utils/validation_functions.dart';
+import 'package:isssApps/widgets/app_bar/custom_app_bar.dart';
+import 'package:isssApps/widgets/custom_button.dart';
+import 'package:isssApps/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
 class SecurityPolicyScreen extends StatelessWidget {

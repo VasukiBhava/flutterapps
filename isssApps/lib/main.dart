@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      title: 'vasuki_s_application1',
+      title: 'isssApps',
       initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.routes,
     );

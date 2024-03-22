@@ -1,5 +1,5 @@
 
-# vasuki_s_application1
+# ISSSApps
 ### Table of contents
 - [System requirements](#system-requirements)
 - [Figma design guidelines for better UI accuracy](#figma-design-guideline-for-better-accuracy)

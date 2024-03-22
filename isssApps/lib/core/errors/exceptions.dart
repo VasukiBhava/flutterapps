@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vasuki_s_application1/main.dart';
+import 'package:isssApps/main.dart';
 
 class ServerException implements Exception {}
 

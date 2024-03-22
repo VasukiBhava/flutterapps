@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vasuki_s_application1/core/app_export.dart';
+import 'package:isssApps/core/app_export.dart';
 
 class ProgressDialogUtils {
   static bool isProgressVisible = false;

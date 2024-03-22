@@ -1,7 +1,7 @@
 import 'bloc/splash_bloc.dart';
 import 'models/splash_model.dart';
 import 'package:flutter/material.dart';
-import 'package:vasuki_s_application1/core/app_export.dart';
+import 'package:isssApps/core/app_export.dart';
 
 class SplashScreen extends StatelessWidget {
   static Widget builder(BuildContext context) {

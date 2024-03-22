@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vasuki_s_application1/core/app_export.dart';
+import 'package:isssApps/core/app_export.dart';
 
 // ignore: must_be_immutable
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements  PreferredSizeWidget {
   CustomAppBar(
       {required this.height,
       this.leadingWidth,

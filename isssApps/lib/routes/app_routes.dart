@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vasuki_s_application1/presentation/security_policy_screen/security_policy_screen.dart';
-import 'package:vasuki_s_application1/presentation/splash_screen/splash_screen.dart';
-import 'package:vasuki_s_application1/presentation/app_navigation_screen/app_navigation_screen.dart';
+import 'package:isssApps/presentation/security_policy_screen/security_policy_screen.dart';
+import 'package:isssApps/presentation/splash_screen/splash_screen.dart';
+import 'package:isssApps/presentation/app_navigation_screen/app_navigation_screen.dart';
 
 class AppRoutes {
   static const String securityPolicyScreen = '/security_policy_screen';
