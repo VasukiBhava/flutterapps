@@ -1,5 +1,5 @@
 
-# asuki_v_s_application13
+# Dental App
 ### Table of contents
 - [System requirements](#system-requirements)
 - [Figma design guidelines for better UI accuracy](#figma-design-guideline-for-better-accuracy)
@@ -8,7 +8,6 @@
 - [How to format your code?](#how-you-can-do-code-formatting)
 - [How you can improve code readability?](#how-you-can-improve-the-readability-of-code)
 - [Libraries and tools used](#libraries-and-tools-used)
-- [Support](#support)
 
 ### System requirements
 
@@ -62,7 +61,3 @@ Resolve the errors and warnings that are shown in the application.
   https://bloclibrary.dev
 - cached_network_image - For storing internet image into cache
   https://pub.dev/packages/cached_network_image
-
-### Support
-
-If you have any problems or questions, go to our Discord channel, where we will help you as quickly as possible: https://discord.com/invite/rFMnCG5MZ7
