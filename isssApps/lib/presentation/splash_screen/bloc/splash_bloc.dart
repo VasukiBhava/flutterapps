@@ -16,7 +16,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   ) async {
     Future.delayed(const Duration(milliseconds: 3000), () {
       NavigatorService.popAndPushNamed(
-        AppRoutes.securityPolicyScreen,
+        AppRoutes.artWorkScreen,
       );
     });
   }

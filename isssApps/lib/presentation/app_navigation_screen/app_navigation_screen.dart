@@ -171,7 +171,7 @@ class AppNavigationScreen extends StatelessWidget {
 
   onTapSecurityPolicy(BuildContext context) {
     NavigatorService.pushNamed(
-      AppRoutes.securityPolicyScreen,
+      AppRoutes.artWorkScreen,
     );
   }
 

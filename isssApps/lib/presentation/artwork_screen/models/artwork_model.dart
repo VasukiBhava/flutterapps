@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
 // ignore: must_be_immutable
-class SecurityPolicyModel extends Equatable {
-  SecurityPolicyModel copyWith() {
-    return SecurityPolicyModel();
+class ArtWorkModel extends Equatable {
+  ArtWorkModel copyWith() {
+    return ArtWorkModel();
   }
 
   @override
