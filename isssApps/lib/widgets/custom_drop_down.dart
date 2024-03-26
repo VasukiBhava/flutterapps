@@ -1,5 +1,8 @@
-import 'package:asuki_v_s_application6/core/app_export.dart';
 import 'package:flutter/material.dart';
+
+import '../core/utils/color_constant.dart';
+import '../core/utils/size_utils.dart';
+import '../data/models/selectionPopupModel/selection_popup_model.dart';
 
 class CustomDropDown extends StatelessWidget {
   CustomDropDown(
@@ -137,7 +140,7 @@ class CustomDropDown extends StatelessWidget {
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
           borderSide: BorderSide(
-            color: ColorConstant.gray10005,
+            color: ColorConstant.blueGray100,
             width: 1,
           ),
         );
@@ -162,11 +165,15 @@ class CustomDropDown extends StatelessWidget {
 
   _setPadding() {
     switch (padding) {
-      default:
+      case DropDownPadding.PaddingT12:
         return getPadding(
           left: 12,
           top: 12,
           bottom: 12,
+        );
+      default:
+        return getPadding(
+          all: 11,
         );
     }
   }

@@ -8,7 +8,7 @@ final Map<String, String> enUs = {
   "lbl_pluto": "Pluto",
   "lbl_splash_screen": "Splash Screen",
   "lbl_password": "Password",
-  "msg_username_or_email": "Username or Email",
+  "msg_art_work_title": "Title",
   "lbl_login": "Login",
   "lbl_enter_password": "Enter Password",
   "msg_michellerock_gmail_com": "Michellerock@gmail.com",

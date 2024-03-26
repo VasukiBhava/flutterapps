@@ -1,3 +1,5 @@
+import 'package:isssApps/core/app_export.dart';
+
 import '../../data/data_sources/remote/artworks.dart';
 
 class ArtWorkRepository {
@@ -5,7 +7,8 @@ class ArtWorkRepository {
 
   ArtWorkRepository({required this.dataSource});
 
-  Future<List> getArtWorks() {
+  Future<List<SelectionPopupModel>> getArtWorks() {
+    print("getWorks");
     return dataSource.getArtWorkFromApi();
   }
 }
