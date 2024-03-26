@@ -47,7 +47,7 @@ class ArtWorkState extends Equatable {
     TextEditingController? valueController,
     SelectionPopupModel? selectedDropDownValue,
     List<SelectionPopupModel>? selectedDropDownList,
-    ArtWorkStateModel? ArtWorkModelObj,
+    ArtWorkStateModel? artWorkModelObj,
   }) {
     return ArtWorkState(
       nameController: nameController ?? this.nameController,

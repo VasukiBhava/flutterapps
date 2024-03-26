@@ -17,10 +17,10 @@ class ArtWorkLoaded extends ArtWorkEvent {
 
   Function ArtWorkEventError;
 
-  // @override
-  // List<Object?> get props => [
-  //       ArtWorkEventError,
-  //     ];
+  @override
+  List<Object> get props => [
+        ArtWorkEventError,
+      ];
 }
 
 ///event for dropdown selection
@@ -28,4 +28,8 @@ class ChangeDropDownEvent extends ArtWorkEvent {
   ChangeDropDownEvent({required this.value});
 
   SelectionPopupModel value;
+  @override
+  List<Object> get props => [
+        value,
+      ];
 }

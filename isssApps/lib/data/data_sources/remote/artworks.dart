@@ -8,21 +8,20 @@ class ArtWorkRepositoryDataSource {
     // Placeholder API URL for demonstration
     final url =
         Uri.parse('https://api.artic.edu/api/v1/artworks?page=1&limit=10');
-
+    print(url);
     try {
       final response = await http.get(url);
+      print(response.statusCode);
 
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body);
-        print("data $data");
+        var data = jsonDecode(response.body);
+        List<SelectionPopupModel> popupList = [];
+        for (var i in data['data']) {
+          popupList.add(SelectionPopupModel(
+              id: i['id'], title: i['title'], isSelected: false));
+        }
         // Extracting the title field for demonstration
-        return data
-            .map((item) => SelectionPopupModel(
-                id: item['data']['id'],
-                title: item['data']['title'],
-                value: item['data']['id'],
-                isSelected: false))
-            .toList();
+        return popupList;
       } else {
         throw Exception('Failed to fetch data');
       }

@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:isssApps/core/app_export.dart';
 import 'package:isssApps/domain/repository/artWork_repo.dart';
 
+import '../models/artwork_model.dart';
 import 'artwork_event.dart';
 import 'artwork_state.dart';
 
@@ -21,12 +22,14 @@ class ArtWorkBloc extends Bloc<ArtWorkEvent, ArtWorkState> {
     ArtWorkInitializeEvent event,
     Emitter<ArtWorkState> emit,
   ) async {
-    emit(state.copyWith(ArtWorkModelObj: state.artWorkModelObj));
-    // add(ArtWorkLoaded(
-    //   ArtWorkEventError: () {
-    //     _onFetchMeEventError("Something Went Wrong");
-    //   },
-    // ), null);
+    emit(state.copyWith(artWorkModelObj: state.artWorkModelObj));
+    add(
+      ArtWorkLoaded(
+        ArtWorkEventError: () {
+          _onFetchMeEventError("Something Went Wrong");
+        },
+      ),
+    );
   }
 
   FutureOr<void> _callFetchMe(
@@ -34,9 +37,9 @@ class ArtWorkBloc extends Bloc<ArtWorkEvent, ArtWorkState> {
     Emitter<ArtWorkState> emit,
   ) async {
     await repository.getArtWorks().then((value) async {
-      print('value $value');
       emit(
-        state.copyWith(selectedDropDownList: value),
+        state.copyWith(
+            artWorkModelObj: ArtWorkStateModel(dropdownItemList: value)),
       );
     }).onError((error, stackTrace) {
       _onFetchMeError();
