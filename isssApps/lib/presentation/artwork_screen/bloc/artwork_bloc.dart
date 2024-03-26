@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:isssApps/core/app_export.dart';
 import 'package:isssApps/domain/repository/artWork_repo.dart';
 
@@ -15,6 +16,7 @@ class ArtWorkBloc extends Bloc<ArtWorkEvent, ArtWorkState> {
     on<ArtWorkInitializeEvent>(_onInitialize);
     on<ArtWorkLoaded>(_callFetchMe);
     on<ChangeDropDownEvent>(_changeDropDown);
+    on<ArtWorkSingleEvent>(_callFetchSingleArtWork);
   }
   final ArtWorkRepository repository;
 
@@ -55,5 +57,33 @@ class ArtWorkBloc extends Bloc<ArtWorkEvent, ArtWorkState> {
   FutureOr<void> _changeDropDown(
       ChangeDropDownEvent event, Emitter<ArtWorkState> emit) {
     emit(state.copyWith(selectedDropDownValue: event.value));
+    add(
+      ArtWorkSingleEvent(
+        ArtWorkEventError: () {
+          _onFetchMeEventError("Something Went Wrong");
+        },
+      ),
+    );
+  }
+
+  FutureOr<void> _callFetchSingleArtWork(
+    ArtWorkSingleEvent event,
+    Emitter<ArtWorkState> emit,
+  ) async {
+    await repository
+        .getArtWorksById(state.selectedDropDownValue?.id)
+        .then((value) async {
+      emit(
+        state.copyWith(
+          nameController: TextEditingController(text: value.artistDisplay),
+          linkController: TextEditingController(text: value.artworkTypeTitle),
+          groupController: TextEditingController(text: value.artistDisplay),
+          valueController: TextEditingController(text: value.artistDisplay),
+        ),
+      );
+    }).onError((error, stackTrace) {
+      _onFetchMeError();
+      event.ArtWorkEventError.call();
+    });
   }
 }

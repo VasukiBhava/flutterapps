@@ -23,11 +23,23 @@ class ArtWorkLoaded extends ArtWorkEvent {
       ];
 }
 
+class ArtWorkSingleEvent extends ArtWorkEvent {
+  ArtWorkSingleEvent({required this.ArtWorkEventError});
+
+  Function ArtWorkEventError;
+
+  @override
+  List<Object> get props => [
+        ArtWorkEventError,
+      ];
+}
+
 ///event for dropdown selection
 class ChangeDropDownEvent extends ArtWorkEvent {
   ChangeDropDownEvent({required this.value});
 
   SelectionPopupModel value;
+
   @override
   List<Object> get props => [
         value,
