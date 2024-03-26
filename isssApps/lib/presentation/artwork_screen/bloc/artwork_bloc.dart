@@ -77,8 +77,8 @@ class ArtWorkBloc extends Bloc<ArtWorkEvent, ArtWorkState> {
         state.copyWith(
           nameController: TextEditingController(text: value.artistDisplay),
           linkController: TextEditingController(text: value.artworkTypeTitle),
-          groupController: TextEditingController(text: value.artistDisplay),
-          valueController: TextEditingController(text: value.artistDisplay),
+          groupController: TextEditingController(text: value.departmentTitle),
+          valueController: TextEditingController(text: value.placeOfOrigin),
         ),
       );
     }).onError((error, stackTrace) {
