@@ -9,6 +9,7 @@ class CustomTextFormField extends StatelessWidget {
       this.padding,
       this.variant,
       this.fontStyle,
+      this.readonly,
       this.alignment,
       this.width,
       this.margin,
@@ -44,6 +45,7 @@ class CustomTextFormField extends StatelessWidget {
   FocusNode? focusNode;
 
   bool? isObscureText;
+  bool? readonly;
 
   TextInputAction? textInputAction;
 
@@ -80,6 +82,7 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,
+        enabled: readonly,
         style: _setFontStyle(),
         obscureText: isObscureText!,
         textInputAction: textInputAction,
@@ -114,7 +117,7 @@ class CustomTextFormField extends StatelessWidget {
     switch (fontStyle) {
       default:
         return TextStyle(
-          color: ColorConstant.blueGray200,
+          color: ColorConstant.blueGray800,
           fontSize: getFontSize(
             16,
           ),
@@ -129,7 +132,7 @@ class CustomTextFormField extends StatelessWidget {
       default:
         return BorderRadius.circular(
           getHorizontalSize(
-            6.00,
+            10.00,
           ),
         );
     }
@@ -143,7 +146,7 @@ class CustomTextFormField extends StatelessWidget {
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
           borderSide: BorderSide(
-            color: ColorConstant.blueGray100,
+            color: ColorConstant.blueGray400,
             width: 1,
           ),
         );
@@ -170,13 +173,13 @@ class CustomTextFormField extends StatelessWidget {
     switch (padding) {
       case TextFormFieldPadding.PaddingT12:
         return getPadding(
-          left: 12,
-          top: 12,
-          bottom: 12,
+          left: 16,
+          top: 16,
+          bottom: 16,
         );
       default:
         return getPadding(
-          all: 11,
+          all: 17,
         );
     }
   }

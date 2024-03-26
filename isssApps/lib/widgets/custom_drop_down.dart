@@ -108,15 +108,12 @@ class CustomDropDown extends StatelessWidget {
     switch (fontStyle) {
       default:
         return TextStyle(
-          color: ColorConstant.blueGray900,
+          color: ColorConstant.blueGray800,
           fontSize: getFontSize(
-            12,
+            16,
           ),
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w400,
-          height: getVerticalSize(
-            1.25,
-          ),
+          fontFamily: 'Gilroy',
+          fontWeight: FontWeight.w500,
         );
     }
   }
@@ -126,7 +123,7 @@ class CustomDropDown extends StatelessWidget {
       default:
         return BorderRadius.circular(
           getHorizontalSize(
-            10.00,
+            6.00,
           ),
         );
     }
@@ -140,7 +137,7 @@ class CustomDropDown extends StatelessWidget {
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
           borderSide: BorderSide(
-            color: ColorConstant.blueGray100,
+            color: ColorConstant.blueGray400,
             width: 1,
           ),
         );
@@ -167,13 +164,13 @@ class CustomDropDown extends StatelessWidget {
     switch (padding) {
       case DropDownPadding.PaddingT12:
         return getPadding(
-          left: 12,
-          top: 12,
-          bottom: 12,
+          left: 15,
+          top: 15,
+          bottom: 15,
         );
       default:
         return getPadding(
-          all: 11,
+          all: 15,
         );
     }
   }

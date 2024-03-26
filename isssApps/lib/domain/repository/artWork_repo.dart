@@ -8,7 +8,6 @@ class ArtWorkRepository {
   ArtWorkRepository({required this.dataSource});
 
   Future<List<SelectionPopupModel>> getArtWorks() {
-    print("getWorks");
     return dataSource.getArtWorkFromApi();
   }
 }

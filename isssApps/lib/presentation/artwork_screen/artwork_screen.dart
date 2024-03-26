@@ -6,6 +6,7 @@ import 'package:isssApps/presentation/artwork_screen/bloc/artwork_bloc.dart';
 import 'package:isssApps/presentation/artwork_screen/bloc/artwork_event.dart';
 import 'package:isssApps/presentation/artwork_screen/bloc/artwork_state.dart';
 import 'package:isssApps/presentation/artwork_screen/models/artwork_model.dart';
+import 'package:isssApps/widgets/custom_text_form_field.dart';
 
 import '../../widgets/app_bar/custom_app_bar.dart';
 import '../../widgets/custom_drop_down.dart';
@@ -39,16 +40,8 @@ class ArtWorkView extends StatelessWidget {
         appBar: CustomAppBar(
             height: getVerticalSize(53),
             leadingWidth: 40,
-            leading: CustomImageView(
-                svgPath: ImageConstant.imgArrowleft,
-                height: getSize(24),
-                width: getSize(24),
-                margin: getMargin(left: 16, top: 12, bottom: 17),
-                onTap: () {
-                  onTapImgArrowleft(context);
-                }),
             centerTitle: true,
-            title: Text("lbl_login".tr,
+            title: Text("lbl_art_work_from".tr,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: AppStyle.txtGilroySemiBold24)),
@@ -61,68 +54,117 @@ class ArtWorkView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("msg_art_work_title".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtGilroyMedium16),
+                    Padding(
+                      padding: getPadding(left: 10, top: 15, right: 10),
+                      child: Text("msg_art_work_title".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtGilroyMedium16),
+                    ),
                     BlocSelector<ArtWorkBloc, ArtWorkState, ArtWorkStateModel?>(
                         selector: (state) => state.artWorkModelObj,
                         builder: (context, artWorkModelObj) {
                           return CustomDropDown(
                               focusNode: FocusNode(),
                               icon: Container(
-                                  margin: getMargin(left: 30, right: 20),
+                                  margin: getMargin(left: 10, right: 10),
                                   decoration: BoxDecoration(
                                       border: Border.all(
                                           color: ColorConstant.blueGray400,
                                           width: getHorizontalSize(1),
                                           strokeAlign: strokeAlignCenter)),
                                   child: Text("")),
-                              hintText: "Data",
-                              margin: getMargin(top: 8, left: 10, right: 10),
+                              hintText: "msg_art_works_title".tr,
+                              margin: getMargin(top: 6, left: 10, right: 10),
                               items: artWorkModelObj!.dropdownItemList,
                               onChanged: (value) {
                                 context
                                     .read<ArtWorkBloc>()
                                     .add(ChangeDropDownEvent(value: value));
+                                // context
+                                //     .read<ArtWorkBloc>()
+                                //     .add(fetchArtWorkEvent(value: value));
                               });
                         }),
+
                     Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 20),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Text Field 1',
-                              border: OutlineInputBorder(),
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Text Field 2',
-                              border: OutlineInputBorder(),
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Text Field 3',
-                              border: OutlineInputBorder(),
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelText: 'Text Field 4',
-                              border: OutlineInputBorder(),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                      padding: getPadding(left: 10, top: 15, right: 10),
+                      child: Text("msg_artist_title".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtGilroyMedium16),
+                    ),
+                    BlocSelector<ArtWorkBloc, ArtWorkState,
+                            TextEditingController?>(
+                        selector: (state) => state.nameController,
+                        builder: (context, nameController) {
+                          return CustomTextFormField(
+                            readonly: false,
+                            controller: nameController,
+                            focusNode: FocusNode(),
+                            hintText: "msg_artist_title".tr,
+                            margin: getMargin(top: 6, left: 10, right: 10),
+                          );
+                        }),
+                    Padding(
+                      padding: getPadding(left: 10, top: 15, right: 10),
+                      child: Text("msg_artist_title".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtGilroyMedium16),
+                    ),
+                    BlocSelector<ArtWorkBloc, ArtWorkState,
+                            TextEditingController?>(
+                        selector: (state) => state.linkController,
+                        builder: (context, linkController) {
+                          return CustomTextFormField(
+                            readonly: false,
+                            controller: linkController,
+                            focusNode: FocusNode(),
+                            hintText: "msg_artist_title".tr,
+                            margin: getMargin(top: 6, left: 10, right: 10),
+                          );
+                        }),
+                    Padding(
+                      padding: getPadding(left: 10, top: 15, right: 10),
+                      child: Text("msg_artist_title".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtGilroyMedium16),
+                    ),
+                    BlocSelector<ArtWorkBloc, ArtWorkState,
+                            TextEditingController?>(
+                        selector: (state) => state.groupController,
+                        builder: (context, groupController) {
+                          return CustomTextFormField(
+                            readonly: false,
+                            controller: groupController,
+                            focusNode: FocusNode(),
+                            hintText: "msg_artist_title".tr,
+                            margin: getMargin(top: 6, left: 10, right: 10),
+                          );
+                        }),
+
+                    Padding(
+                      padding: getPadding(left: 10, top: 15, right: 10),
+                      child: Text("msg_artist_title".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: AppStyle.txtGilroyMedium16),
+                    ),
+                    BlocSelector<ArtWorkBloc, ArtWorkState,
+                            TextEditingController?>(
+                        selector: (state) => state.valueController,
+                        builder: (context, valueController) {
+                          return CustomTextFormField(
+                            readonly: false,
+                            controller: valueController,
+                            focusNode: FocusNode(),
+                            hintText: "msg_artist_title".tr,
+                            margin: getMargin(top: 6, left: 10, right: 10),
+                          );
+                        }),
+
                     // } else if (state is ArtWorkError) {
                     //   return Center(
                     //       child: Text('Failed to load dropdown values.'));
